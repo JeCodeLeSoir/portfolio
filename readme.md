@@ -1,5 +1,1 @@
-# Compile
- - cd compile
- - node run.js
-
-./redirect prod/index.html
+permalink: /prod/index.html
