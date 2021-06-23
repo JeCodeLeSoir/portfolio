@@ -1,4 +1,0 @@
-/* 
-    App 
-    By JeCodeLeSoir
-*/
