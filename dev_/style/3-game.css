@@ -1,0 +1,122 @@
+.game{
+    display: block;
+    width: 100%;
+
+    position: relative;
+
+    padding: 5px;
+}
+
+.game-engine{
+    display: block;
+    border:1px solid black ;
+    
+    width: 90%;
+
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+.game-engine canvas{
+    width: 300px;
+}
+
+.game-menu{
+    color:white;
+    position: absolute;
+    top:100px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    visibility: hidden;
+}
+
+.mobile-game-controls{
+   display: grid;
+
+   grid-template-columns: 50% 50%;
+   width: 90%;
+   
+   margin: 0 auto;
+
+   font-size: 15px;
+
+   align-items: center;
+
+   padding: 15px;
+}
+
+.mobile-game-controls .controls{
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 15px;
+    user-select: none;
+
+    padding: 5px;
+}
+
+.mobile-game-controls .controls button{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 15px auto;
+
+    border-radius: 15px;
+    border:0;
+
+    font-size: 25px;
+
+    filter: drop-shadow(0 0 0.75rem var(--color-primale));
+}
+
+.mobile-game-controls .controls .up{
+   transform: rotate(-90deg);
+}
+
+.mobile-game-controls .controls .up:active{
+    background-color: cyan;
+}
+
+.mobile-game-controls .controls .down{
+    transform: rotate(90deg);
+}
+
+.mobile-game-controls .controls .down:active{
+    background-color: cyan;
+}
+
+.mobile-game-controls .controls .btn-a{
+    color: rgb(15, 214, 15);
+}
+
+.mobile-game-controls .controls .btn-a:active{
+    background-color: cyan;
+}
+
+@media screen and (min-width: 800px){
+    .game-engine{
+        width: 600px;
+    }
+
+    .mobile-game-controls{
+        width: 600px;
+    }
+
+    .mobile-game-controls .controls button{
+        width: 100px;
+        height: 100px;
+        font-size: 45px;
+    }
+}

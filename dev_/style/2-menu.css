@@ -1,0 +1,163 @@
+/* menu */
+
+.top-bar .github
+{
+    
+    position: absolute;
+    top:15px;
+    right: 50px;
+    display: inline-block;
+    width: auto;
+    
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+
+    font-size: 35px;
+
+    background-color: var(--color-secondaire);
+   
+    border-radius: 15px;
+
+    visibility: hidden;
+}
+
+.top-bar .github a {
+    text-decoration: none;
+    color: var(--color-back);
+}
+
+.top-bar .github a:hover{
+    color: var(--color-primale);
+}
+
+.top-bar .button{
+    position: absolute;
+    top:5px;
+    right: 30px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+
+    z-index: 9999;
+
+    cursor: pointer;
+}
+  
+.top-bar .button div{
+    display: block;
+    width: 60px;
+    height: 10px;
+    margin: 10px;
+    background-color: var(--color-primale);
+    border-radius: 5px;
+}
+
+.menu{
+    background-color: var(--color-secondaire);
+    display: block;
+    
+    position: absolute;
+
+    width: 100%;
+    padding: 5px;
+    height: 100vh;
+    
+    overflow: auto;
+    direction:ltr;
+
+    visibility: hidden;
+
+    z-index: 999;
+
+    user-select: none;
+}
+
+.menu ul{
+  padding: 0;
+  list-style: none;
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+.menu ul li{
+   display: block;
+   padding: 15px;
+}
+
+.menu ul li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 35px;
+
+    cursor: pointer;
+
+    color: var(--color-back);
+}
+
+.menu ul li a::after{
+  position: absolute;
+
+  bottom: -5px;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+  background-color: var(--color-secondaire);
+
+  content: ''; 
+
+  transform-origin: -1 0;
+  transform: scaleX(0);
+
+  transition: transform .3s;
+
+  z-index: 1;
+}
+
+.menu ul li a:hover::after{
+  transform: scaleX(-1);
+}
+
+@media screen and (min-width: 800px){
+
+    .top-bar .button{
+        visibility: hidden;
+    }
+
+    .menu ul li a{
+        display: block;
+        color: var(--color-secondaire);
+    }
+
+    .menu ul li a::first-letter {
+        color: white;
+    }
+
+    .menu{
+        position:initial;
+        background-color: transparent;
+
+        visibility: visible;
+        height: auto;
+
+        min-height: auto;
+    }
+
+    .top-bar .github
+    {
+        visibility: visible;
+    }
+
+    .menu ul li{
+        display: inline-block; 
+    }
+
+    .menu ul li a{
+        font-size: 25px;
+    }
+
+}
