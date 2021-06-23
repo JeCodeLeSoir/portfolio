@@ -1,0 +1,106 @@
+.a-propos{
+    display: block;
+}
+
+.a-propos .parallax{
+    position: relative;
+    display: block;
+}
+
+.a-propos .parallax .box{
+    
+    display: grid;
+    width: 100%;
+    padding: 5px;
+
+    height: 600px;
+
+    grid-template-columns: 50% 50%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.a-propos .parallax .box .inverse{
+   grid-row: 1;
+   grid-column: 1;
+}
+
+.a-propos .parallax .box img{
+    display: inline;
+    width: 50px;
+    height: 50px;
+
+    object-fit:cover;
+    border-radius: 15px;
+    margin: 0 auto;
+
+    filter: drop-shadow(0 0 0.75rem var(--color-primale));
+
+    z-index: 1;
+}
+
+.a-propos .parallax .box .text{
+    display: grid;
+    width: auto;
+    z-index: 2;
+
+    color: rgb(255, 255, 255);
+     
+    padding: 5px;
+}
+
+.a-propos .parallax .box .text h3{
+    text-align: left;
+    display: block;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 35px;
+
+    text-shadow: 0 5px rgb(0, 0, 0);
+    white-space: nowrap;
+}
+
+.a-propos .parallax .box .text p{
+    text-align: left;
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+
+    text-shadow: 0 5px rgb(0, 0, 0);
+}
+
+.a-propos .inverse p {
+    text-align: right !important;
+}
+
+.a-propos .inverse h3 {
+    text-align: right !important;
+}
+
+@media screen and (min-width: 600px){
+    .a-propos .parallax .box img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .a-propos .parallax .box {
+        height: 100vh;
+    }
+    .a-propos .parallax .box img{
+        width: 300px;
+        height: 300px;
+    }
+
+    .a-propos .parallax .box .text h3{
+        font-size: 35px;
+    }
+
+    .a-propos .parallax .box .text p{
+        font-size: 25px;
+    }
+}
