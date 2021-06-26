@@ -9,12 +9,13 @@
 
 .a-propos .parallax .box{
     
-    display: grid;
+    display: block;
     width: 100%;
     padding: 5px;
 
     height: 600px;
 
+    display: grid;
     grid-template-columns: 50% 50%;
 
     align-items: center;
@@ -28,8 +29,8 @@
 
 .a-propos .parallax .box img{
     display: inline;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
 
     object-fit:cover;
     border-radius: 15px;
@@ -41,7 +42,7 @@
 }
 
 .a-propos .parallax .box .text{
-    display: grid;
+    
     width: auto;
     z-index: 2;
 
@@ -56,7 +57,8 @@
     margin: 0;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-size: 35px;
+    font-weight: bold;
+    font-size: 20px;
 
     text-shadow: 0 5px rgb(0, 0, 0);
     white-space: nowrap;
@@ -80,7 +82,37 @@
     text-align: right !important;
 }
 
+.competence{
+  
+   display: inline-block;
+   width: 180px;
+
+   margin-top: 35px;
+   padding: 5px;
+}
+
+.competence .progress{
+   background-color: greenyellow;
+   width: 140px;
+   padding: 5px;
+   font-size: 20px;
+   margin: 5px;
+
+   border-radius: 15px;
+
+   text-align: center;
+}
+
 @media screen and (min-width: 600px){
+
+    .competence{
+        width: 300px;
+    }
+
+    .competence .progress{
+        width: 280px;
+    }
+
     .a-propos .parallax .box img{
         width: 200px;
         height: 200px;
@@ -91,9 +123,14 @@
     .a-propos .parallax .box {
         height: 100vh;
     }
+
     .a-propos .parallax .box img{
         width: 300px;
         height: 300px;
+    }
+
+    .a-propos .parallax .box .text{
+        display: grid;
     }
 
     .a-propos .parallax .box .text h3{

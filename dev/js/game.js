@@ -37,8 +37,9 @@ async function LoadImage(w, h, src) {
 
 
     if (canvas) {
-
+        var UpdateLogicGameCache = undefined;
         const gameControls = {};
+        const keyCodeMap = {};
 
         function CreateControl(button, callback) {
             let interval;
@@ -62,8 +63,13 @@ async function LoadImage(w, h, src) {
             GameMenu.classList.remove('show');
         });
 
-        var UpdateLogiqueGameCache = undefined;
+        
 
+        onkeydown = onkeyup = function (e) {
+            keyCodeMap[e.keyCode] = e.type == 'keydown';
+        };
+
+    
         function Game(_IsStart) {
 
             document.body.style.overflowY = "hidden";
@@ -85,20 +91,8 @@ async function LoadImage(w, h, src) {
 
             if (canvas.getContext) {
                 const context2d = canvas.getContext('2d');
-
-                var x = 0;
-                var y = 0;
-
-                var keyCodeMap = {};
-
-                onkeydown = onkeyup = function (e) {
-                    keyCodeMap[e.keyCode] = e.type == 'keydown';
-                };
-
+                
                 canvas.height = canvas.width;
-
-                console.log(canvas.width);
-                console.log(canvas.height);
 
                 function intersect(a, b) {
                     return (
@@ -109,7 +103,7 @@ async function LoadImage(w, h, src) {
                     );
                 };
 
-                const UpdateLogiqueGame = () => {
+                const UpdateLogicGame = () => {
 
                     /*=== Control ===*/
                     if (!Player.dead) {
@@ -119,7 +113,6 @@ async function LoadImage(w, h, src) {
                             }
                         }
                         else if (keyCodeMap[40] || gameControls.down) {
-                            console.log("down");
                             if (Player.y < canvas.height - ((player_scale * player_texture.width) /2)) {
                                 Player.y = Player.y + 1 * 4;
                             }
@@ -135,7 +128,7 @@ async function LoadImage(w, h, src) {
                                     width: missile_texture.width * missile_scale,
                                     height: missile_texture.height * missile_scale
                                 });
-                                Player.timeoutMissile = 20;
+                                Player.timeoutMissile = 100;
                             }
                         }
                         Player.timeoutMissile--;
@@ -208,7 +201,7 @@ async function LoadImage(w, h, src) {
                         };
                     };
                 };
-                UpdateLogiqueGameCache = setInterval(UpdateLogiqueGame, 10);
+                UpdateLogicGameCache = setInterval(UpdateLogicGame, 10);
 
                 function Clear() {
                     context2d.clearRect(0, 0, canvas.width, canvas.height);
@@ -250,7 +243,7 @@ async function LoadImage(w, h, src) {
                     else {
                         Clear();
                         IsStart = false;
-                        clearInterval(UpdateLogiqueGameCache);
+                        clearInterval(UpdateLogicGameCache);
                         document.body.style.overflowY = "auto";
                         MessageGame.innerHTML = "Vous être mort !";
                         GameMenu.classList.add('show');
